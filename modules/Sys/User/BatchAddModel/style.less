@@ -1,0 +1,23 @@
+.main {
+  .head{
+      &::before{
+        display: inline-block;
+       margin-right: 4px;
+        color: #f5222d;
+        font-size: 14px;
+        font-family: SimSun,sans-serif;
+        line-height: 1;
+        content: '*';
+      }
+  }
+
+  :global{
+      .ant-form-item {
+          margin-bottom: 4px;
+      }
+      .ant-select-selection--multiple{
+        margin-top: 3px;
+    text-overflow: ellipsis;
+    }
+  }
+}

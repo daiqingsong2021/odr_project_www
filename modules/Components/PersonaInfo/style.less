@@ -1,0 +1,58 @@
+.main{
+    background-color:  #f5f5f5;
+    padding: 15px 20px 20px;
+   .back{
+       height: 100%;
+       background: white;
+       padding-top: 20px;
+   }
+    h2{
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-right: 15px;
+        border-bottom: 1px solid #e8e8e8;
+    }
+   main{
+    border: 1px solid #e8e8e8;
+    width: 85%;
+    margin: 0 auto;
+    border-radius: 4px;
+    .item{
+        margin: 0 15px;
+        padding: 20px;
+    border-bottom: 1px solid #e8e8e8;
+    &:last-child{
+        border-bottom:none
+    }
+    div{
+        margin: 8px 0;
+        padding-left: 30px;
+    }
+        span{
+            font-weight: 600;
+        }
+    }
+     
+   }
+   .role{
+    overflow:hidden;
+    text-overflow:ellipsis; 
+    white-space: nowrap;
+  }
+   .mytable{
+    width: 85%;
+    margin: 0 auto;
+    h3{
+    padding: 20px 20px 10px;
+    margin: 0 15px;
+    }
+   }
+   :global{
+    .ant-table-body{
+        overflow-y: auto !important;
+      }
+    .ant-table-small > .ant-table-content .ant-table-header{
+        overflow-y: auto;
+      }
+   }
+}

@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  .leftMain {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+  }
+  border-top: 1px solid #d9d9d9;
+  .leftbox {
+    height: 100%;
+    width: calc(20% - 6px);
+    margin-right: 6px;
+    border-right: 1px solid #d9d9d9;
+    overflow: auto;
+  }
+  .rightbox {
+    height: 100%;
+    width: 100%;
+    border-left: 1px solid #d9d9d9;
+   
+   
+  .topButton{
+      margin-top: 5px;
+      margin-bottom: 10px;
+      padding-left:10px;
+     
+  }
+  .tablescroll{
+    height: calc(100% - 45px);
+    overflow: auto;
+  }
+  }
+  :global{
+    .ant-table td,.ant-table th { white-space: nowrap; }
+    .ant-table-tbody > tr.ant-table-row-selected td {
+     background:none
+  }
+}
+}

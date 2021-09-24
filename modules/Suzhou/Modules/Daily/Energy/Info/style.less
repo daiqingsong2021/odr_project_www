@@ -1,0 +1,30 @@
+@import "../../../../../../static/less/rightForm.less";
+.search{
+    width:100%;
+    height:40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .tipBox{
+        height:30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .tipSpan{
+        display: inline-block;
+        line-height: 40px;
+        margin-right: 10px;
+        }
+    }
+    
+}
+.tdSpan{
+    width:100%;
+    display:block;
+    text-align:right
+}
+:global{
+.ant-table-small > .ant-table-content .ant-table-row:last-child td {
+    border-bottom: 1px rgb(232, 232, 232) solid !important;
+  }
+}

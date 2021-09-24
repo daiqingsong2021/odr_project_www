@@ -1,0 +1,48 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+
+    .icon {
+        margin-right: 5px;
+    }
+
+    .leftMain {
+        width: 100%;
+        overflow: auto
+    }
+
+    :global {
+        .ant-table td {
+            white-space: nowrap;
+        }
+
+        .ant-table thead {
+            white-space: nowrap
+        }
+    }
+
+    :global {
+
+        .ant-table td,
+        .ant-table th {
+            white-space: nowrap;
+        }
+    }
+
+    .clickRowStyl {
+        background-color: #e7f7ff
+    }
+
+    :global {
+        .ant-table-pagination.ant-pagination {
+            float: left !important;
+            min-width: 440px;
+            margin-top: 30px;
+        }
+
+        .ant-table-pagination.ant-pagination {
+            margin: 16px 0 16px 20px;
+        }
+    }
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>登陆跳转</title>
+  <script>
+      //打开chrome浏览器
+      function execChrome(url){
+        var ws = new ActiveXObject("WScript.Shell");
+        ws.Run("cmd.exe /c start chrome "+url,0,true);
+      }
+
+      //打开火狐浏览器
+      function execFireFox(url){
+        var ws = new ActiveXObject("WScript.Shell");
+        ws.Run("cmd.exe /c start firefox "+url,0,true);
+
+        /*
+        var exepath;
+        try {
+            exepath = '"firefox.exe" "'+url+'"';
+            var ws = new ActiveXObject("WScript.Shell");
+            ws.Exec(exepath);
+            return null;
+        } catch (error) {
+            try {
+                exepath = '"C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "'+url+'"';
+                var ws = new ActiveXObject("WScript.Shell");
+                ws.Exec(exepath);
+                return null;
+            } catch (error) {
+                return "调用FireFox浏览器错误！原因："+error.message;
+            }
+        }
+        */
+      }
+      //关闭IE浏览器
+      function closeWin(){
+          this.window.close();
+      }
+  </script>
+ </head>
+ <body>
+  <script>
+// var url = "http://127.0.0.1:3000/login";
+//ws.Run("cmd.exe /c start chrome "+url,0,true);
+
+// var objShell= new ActiveXObject("WScript.Shell");
+//objShell.Run("cmd.exe /c start chrome www.jd.com",0,true);
+      if (checkIE()){//判断是否是IE浏览器
+      	alert('if');
+        open();//打开chrome或firefox
+      }
+      else{
+      	alert('else');
+        document.write("<h3 style='color:#0000FF'>非IE浏览器不需要跳转！</h3>");
+      }
+      //验证是否时IE
+      function checkIE(){
+            var isIE = true;
+            if (navigator && navigator.userAgent){
+                var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+
+            	isIE = (userAgent.indexOf("compatible") > -1 && (userAgent.indexOf("MSIE 6.0") > -1 || userAgent.indexOf("MSIE 7.0") > -1 || userAgent.indexOf("MSIE 8.0") > -1 || userAgent.indexOf("MSIE 9.0") > -1)); //判断是否IE浏览器
+
+            }
+            if (isIE) {
+                return true;
+            }
+            return false;
+      }
+      //打开谷歌或火狐浏览器
+      function open(){
+      	alert('open')
+        var url = "http://127.0.0.1:3000/login";//"http://127.0.0.1:3000/static/plusgantt/index.html";
+        var errMessage = execChrome(url);//execFireFox(url);
+        alert(errMessage);
+        if (errMessage == null){
+        	alert('errMessage null')
+                document.write("<h3 style='color:#0000FF'> 正在启动FireFox浏览器......(可能需要较长时间，请您耐心等候！)</h3>");
+                setTimeout("closeWin()",3000);
+        }else{
+        	alert('errMessage')
+            document.write("<h3 style='color:#0000FF'>"+errMessage+"</h3>");
+            document.write("<br/>");
+            document.write("<h3 style='color:#0000FF'>请您安装FireFox浏览器重新尝试，如还是不行请联系管理员！</h3>");
+        }
+      }
+  </script>
+ </body>
+</html>

@@ -1,0 +1,65 @@
+.firstMargin{
+  :global{
+  //第一列左边距30px
+  .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td:nth-of-type(1){
+    padding-left: 30px;
+  }
+  .ant-table-small > .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th:nth-of-type(1){
+    padding-left: 30px;
+  }
+  }
+}
+.main{
+  :global{
+  
+    .ant-table-pagination.ant-pagination{
+      float: left !important;
+      min-width: 440px;
+      margin-top: 30px;
+    }
+    .ant-table-pagination.ant-pagination{
+      margin: 16px 0 16px 20px;
+    }
+    .ant-table-small > .ant-table-content > .ant-table-body{
+      margin: 0;
+      overflow: auto;
+    }
+
+    .ant-table-small > .ant-table-content .ant-table-row:last-child td {
+      border-bottom: 1px rgb(232, 232, 232) solid !important;
+    }
+    .ant-table-tbody > tr > td.ant-table-column-sort {
+      background: transparent;
+  }
+    .ant-table-body{
+      overflow: auto !important;
+    }
+    .ant-table-body td,th{
+      white-space: nowrap;    
+      overflow: hidden;       
+      text-overflow: ellipsis;
+    }
+    table{
+      table-layout:fixed; 
+  }
+    .ant-table-fixed-header .ant-table-scroll .ant-table-header{
+      overflow-x:scroll;
+      overflow-y: auto;
+    }
+
+    .ant-table-fixed-header .ant-table-scroll .ant-table-header::-webkit-scrollbar{ //设置整个滚动条宽高
+      //opacity: 0;
+      border-bottom: 1px solid rgb(232, 232, 232);
+      background-color: rgb(250, 250, 250);
+    }
+    .ant-menu-vertical .ant-menu-item:not(:last-child), .ant-menu-vertical-left .ant-menu-item:not(:last-child), .ant-menu-vertical-right .ant-menu-item:not(:last-child), .ant-menu-inline .ant-menu-item:not(:last-child){
+      margin: 0;
+    }
+  }
+  position: relative;
+  .contentMenu{position: fixed;z-index: 99999;background:white;box-shadow:0 0 5px #d2d2d2}
+  .setColumns{position: fixed;z-index: 99999;background-color: white;width: 130px;box-shadow: 0 0 8px #d2d2d2;border-radius: 4px;height: 35px;line-height: 35px;text-indent: 10px;cursor: pointer}
+
+
+
+}

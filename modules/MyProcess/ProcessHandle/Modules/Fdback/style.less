@@ -1,0 +1,55 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  .leftMain {
+    width: 100%;
+    overflow: auto
+  }
+
+  :global {
+    .ant-table td {
+      white-space: nowrap;
+    }
+
+    .ant-table thead {
+      white-space: nowrap
+    }
+  }
+
+  :global {
+
+    .ant-table td,
+    .ant-table th {
+      white-space: nowrap;
+    }
+  }
+
+  .myProgress{
+    position: relative;
+    :global{
+     .ant-progress-outer{
+         padding-right: 0;
+         margin-right: 0;
+       
+     }
+     .ant-progress-success-bg, .ant-progress-bg {
+         height: 15px !important;
+     }
+     .ant-progress-inner{
+         border: 1px solid #1890ff;
+     }
+     .ant-progress-inner{
+      overflow: hidden;
+  }
+     .ant-progress-text{
+         position: absolute;
+ top: 6px;
+ right: 22%;
+ font-weight: 600;
+     }
+    }
+ }
+
+}

@@ -1,0 +1,29 @@
+.main{
+  display:flex;
+  justify-content: space-between;
+  height: 100%;
+  .leftMain{width: 100%;overflow: auto}
+  :global{
+    .ant-table td { white-space: nowrap; }
+    .ant-table thead{white-space: nowrap}
+  }
+  :global{
+    .ant-table td,.ant-table th { white-space: nowrap; }
+  }
+  :global{
+    .ant-table td,.ant-table th { white-space: nowrap; }
+    .ant-table-tbody > tr.ant-table-row-selected td {
+     background:none
+  }
+  }
+  :global{
+    .ant-table-pagination.ant-pagination{
+      float: left !important;
+      min-width: 440px;
+      margin-top: 30px;
+    }
+    .ant-table-pagination.ant-pagination{
+      margin: 16px 0 16px 20px;
+    }
+  }
+}

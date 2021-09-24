@@ -1,0 +1,74 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+
+    .leftMain {
+        width: 20%;
+        overflow: auto;
+    }
+
+    .conMain {
+        width: 80%;
+        overflow: auto;
+        border-left: 2px solid #bfd3ea;
+    }
+
+    :global {
+        .ant-table td {
+            white-space: nowrap;
+        }
+
+        .ant-table thead {
+            white-space: nowrap
+        }
+    }
+
+    :global {
+
+        .ant-table td,
+        .ant-table th {
+            white-space: nowrap;
+        }
+    }
+
+    .rightIconBtn {
+        width: 80px;
+        height: 50px;
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .leftTableIcon {
+        margin-right: 3px;
+    }
+
+    .icon {
+        margin-right: 10px;
+    }
+
+    .clickRowStyl {
+        background-color: #e7f7ff
+    }
+
+    :global {
+
+        .ant-table td,
+        .ant-table th {
+            white-space: nowrap;
+        }
+
+        .ant-table-pagination.ant-pagination {
+            float: left !important;
+            min-width: 440px;
+            margin-top: 30px;
+        }
+
+        .ant-table-pagination.ant-pagination {
+            margin: 16px 0 16px 20px;
+        }
+    }
+
+}

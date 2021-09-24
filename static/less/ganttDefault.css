@@ -1,0 +1,262 @@
+﻿.mini-supergrid-cell-inner{
+  line-height: 38px !important;
+}
+.mini-supertree-ec-icon{
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  position: absolute;
+  background: red;
+  top: 8px;
+  background: no-repeat 50% 50%;
+}
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  font-size: 18px;
+}
+.mini-supergrid-cell, .mini-supergrid-headercell {
+
+  border: 0;
+  border-bottom: #d4d6d9 1px solid;
+  line-height: 20px;
+  cursor: default;
+  font-family: tahoma,arial,verdana,sans-serif;
+  font-size: 14px;
+  padding: 0px;
+}
+.mini-menuitem {
+  line-height: 20px;
+  height: auto;
+  width: auto;
+  position: relative;
+  border: 0;
+  padding: 1px;
+  font-size: 14px;
+}
+.mini-menuitem .mini-menuitem-icon {
+  background-position: 0 0;
+  background-size: 100% 100%;
+}
+
+.icon-myaddtask {
+  background: url(../icons/task.png) no-repeat;
+}
+mini-menuitem-text {
+  cursor: default;
+  color: #201F35;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+.mini-supergrid .mini-supergrid-viewport .mini-supergrid-rowselected {
+  background: #e7f7ff;
+}
+.mini-supergrid .mini-supergrid-viewport .mini-supergrid-cellselected {
+  background: none;
+}
+.mini-supergrid-headercell-inner {
+  padding: 2px 4px;
+  padding-top: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 700;
+}
+.mini-supergrid-headercell-hover{
+  background: none;
+}
+.mini-supergrid-header{border-top:none}
+.mini-splitter-border{border: none}
+/* ****  修改甘特图默认样式190218 **** */
+
+/* 右键菜单样式 */
+.mini-menu-border {
+  border: none;
+  box-shadow: #ccc 0px 0px 8px;
+}
+
+.mini-menuitem {
+  font-size: 14px;
+}
+
+.mini-separator {
+  border: none;
+  margin: 0;
+}
+
+.mini-menuitem-text {
+  color: #666;
+  padding: 3px 0;
+}
+
+.mini-menuitem-hover {
+  padding: 0px;
+  border: 1px solid transparent;
+  background: #e7f7ff;
+}
+
+.mini-supergrid .mini-supergrid-viewport .mini-supergrid-rowselected {
+  background: #e7f7ff;
+}
+
+.mini-supergrid .mini-supergrid-viewport .mini-supergrid-cellselected {
+  background: none;
+}
+
+.mini-menuitem-icon {
+  top: 5px;
+}
+
+.mini-menuitem .mini-menuitem-icon {
+  background-position: 0 0;
+  background-size: 100% 100%;
+}
+
+.icon-myaddwbs {
+  background: url(./icons/WBS.png) no-repeat;
+}
+
+.icon-myaddtask {
+  background: url(./icons/task.png) no-repeat;
+}
+
+.icon-mydel {
+  background: url(./icons/del.png) no-repeat;
+}
+
+.icon-mycancel {
+  background: url(./icons/cancel.png) no-repeat;
+}
+
+.icon-myrefresh {
+  background: url(./icons/refresh.png) no-repeat;
+}
+
+.icon-myclumn {
+  background: url(./icons/clumn.png) no-repeat;
+}
+
+.icon-mychange {
+  background: url(./icons/change.png) no-repeat;
+}
+
+.icon-myclose {
+  background: url(./icons/close.png) no-repeat;
+}
+
+.icon-mycopy1 {
+  background: url(./icons/copy1.png) no-repeat;
+}
+
+.icon-myexpansion {
+  background: url(./icons/expansion.png) no-repeat;
+}
+
+.icon-mystick {
+  background: url(./icons/stick.png) no-repeat;
+}
+
+.sps-icon {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 1px;
+  padding: 0 3px;
+  background-size: 100% 100%;
+}
+
+.icon-mychange1 {}
+
+
+/* 甘特图表格样式 仿antd表格 */
+.mini-splitter-border {
+  border: 1px solid transparent;
+}
+
+.mini-supergrid-header {
+  background-color: #fafafa;
+  font-size: 14px;
+  height: 35px !important;
+  border-bottom-color: #e8e8e8 !important;
+}
+
+.mini-supergrid-headercell {
+  height: 35px !important;
+  border-bottom-color: #e8e8e8 !important;
+}
+
+.mini-supergrid-headercell-hover {
+  background: none;
+}
+
+.mini-supergrid-headercell-inner {
+  line-height: 35px !important;
+}
+
+.mini-supergrid-cell,
+.mini-supergrid-headercell {
+  border-bottom-color: #e8e8e8 !important;
+}
+
+.mini-supergrid-cell-inner {
+  line-height: 38px;
+}
+
+.mini-supertree-ec-icon {
+  top: 8px;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.myitem {
+  background: #9ccc5e;
+  border: solid 1px #6e845c;
+  position: absolute;
+  overflow: hidden;
+  display: block;
+  z-index: 100;
+  margin-top:9px;
+  height:4px !important;
+  /* margin: 2px 0; */
+}
+
+.mini-gantt-summary{
+  margin-top:9px  !important;
+}
+
+.mini-gantt-label{
+  margin-top:8px !important;
+}
+
+.myitem .mini-gantt-percentcomplete {
+  background: #0d55a4;
+}
+
+.mini-gantt-critical {
+  border: solid 1px #dd5040 !important;
+  background-color: #dd5040 !important;
+}
+.mini-resizer-trigger {
+  width:18px;
+  height:18px;
+  bottom:0;
+  right:0;
+  background-color :#fff;
+}
+.mini-ganttview-toptimescale .mini-ganttview-headercell {
+  text-align: center;
+  padding-left: 4px;
+}

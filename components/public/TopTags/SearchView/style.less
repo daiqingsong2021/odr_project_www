@@ -1,0 +1,57 @@
+.main {
+    .icon {
+        position: relative;
+        left:15px;
+    }
+    input {
+        width: 150px;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #eee;
+        padding-left: 20px;
+    }
+    input::-webkit-input-placeholder {
+        padding-left: 18px;
+        opacity: 0.5;
+    }
+    input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+        padding-left: 18px;
+        opacity: 0.5;
+    }
+
+    input::-moz-placeholder { /* Mozilla Firefox 19+ */
+        padding-left: 18px;
+        opacity: 0.5;
+    }
+
+    input:-ms-input-placeholder { /* Internet Explorer 10+ */
+        padding-left: 18px;
+        opacity: 0.5;
+    }
+    .search{
+        cursor: pointer;
+    }
+  
+}
+.formstyle{
+    padding: 10px;
+    :global{
+        .ant-form-item{
+            margin-bottom: 0
+        }
+    }
+    .timeOrange{
+        position: relative;
+        .timeStr{
+            position: absolute;
+            white-space: nowrap;
+            top: 23px;
+            color: #1890ff;
+            left: 65px;
+        }
+    }
+    h5{
+        font-size: 14px;
+        margin-top: 8px;
+    }
+}

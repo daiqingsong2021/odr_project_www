@@ -1,0 +1,23 @@
+.main{
+  display:flex;
+  justify-content: space-between;
+  height: 100%;
+  .leftMain{width: 100%;overflow: auto}
+  :global{
+    .ant-table td { white-space: nowrap; }
+    .ant-table thead{white-space: nowrap}
+  }
+  :global {
+    .ant-table-body td{
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    table{
+      table-layout:fixed;
+    }
+  }
+  .clickRowStyl{
+    background-color :#e7f7ff
+  }
+}

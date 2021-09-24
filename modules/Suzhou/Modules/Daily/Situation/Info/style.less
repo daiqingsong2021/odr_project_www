@@ -1,0 +1,70 @@
+@import "../../../../../../static/less/rightForm.less";
+.search{
+    // background: 'white', position: 'sticky', top: -15, zIndex: 999
+    width:100%;
+    height:30px;
+    background:white;
+    .topTags{
+        width:100%;
+        height:30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .tipBox{
+            height:20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .tipSpan{
+                display: inline-block;
+                line-height: 20px;
+                margin-right: 10px;
+            }
+        }
+    }
+    .anchor{    //锚点样式
+        padding:0 5px;
+        :global{
+            .ant-anchor-wrapper{
+                .ant-anchor{
+                    display: flex;
+                    justify-items: flex-start;
+                    flex-direction: row;
+                    align-items: center;
+                    div{
+                        width:80px;
+                        height:30px
+                    }
+                }
+                .ant-anchor>div:nth-child(1){
+                        display: none;
+                    }
+            }
+        }  
+    } 
+}
+.tdSpan{
+    width:100%;
+    display:block;
+    text-align:right
+}
+.main{
+    :global{
+        .ant-modal-body{
+            display: flex;
+            flex-direction: column;
+            overflow:visible;
+            width: 100%;
+        }
+        .ant-table-small > .ant-table-content .ant-table-row:last-child td {
+            border-bottom: 1px rgb(232, 232, 232) solid !important;
+        }
+    }
+    // .mainContent{
+    //     flex:1;
+    //     overflow: auto;
+    // }
+}
+i{
+    color: red;
+}

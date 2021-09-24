@@ -1,0 +1,88 @@
+.react-contextmenu {
+    background-color: #fff;
+    background-clip: padding-box;
+    box-shadow: #ccc 0px 0px 8px;
+    border-radius: 4px;
+    color: #373a3c;
+    font-size: 14px;
+    margin: 2px 0 0;
+    min-width: 140px;
+    outline: none;
+    opacity: 0;
+    padding: 1px;
+    pointer-events: none;
+    text-align: left;
+    transition: opacity 250ms ease !important;
+}
+
+.react-contextmenu.react-contextmenu--visible {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 9999;
+}
+
+.react-contextmenu-item {
+    background: 0 0;
+    border: 0;
+    color: #373a3c;
+	cursor: pointer;
+    font-weight: 400;
+    line-height: 1.5;
+    padding: 6px 20px;
+    text-align: inherit;
+    white-space: nowrap;
+}
+
+.react-contextmenu-item.react-contextmenu-item--active,
+.react-contextmenu-item.react-contextmenu-item--selected {
+    color: #333;
+    background-color: #e7f7ff;
+    border-color: #e7f7ff;
+    text-decoration: none;
+}
+
+.react-contextmenu-item.react-contextmenu-item--disabled,
+.react-contextmenu-item.react-contextmenu-item--disabled:hover {
+    background-color: transparent;
+    border-color: rgba(0,0,0,.15);
+    color: #878a8c;
+}
+
+.react-contextmenu-item--divider {
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    cursor: inherit;
+    margin-bottom: 3px;
+    padding: 2px 0;
+}
+.react-contextmenu-item--divider:hover {
+    background-color: transparent;
+    border-color: rgba(0,0,0,.15);
+}
+
+.react-contextmenu-item.react-contextmenu-submenu {
+	padding: 0;
+}
+
+.react-contextmenu-item.react-contextmenu-submenu > .react-contextmenu-item {}
+.react-contextmenu > .react-contextmenu-item .react-contextmenu{
+    right: inherit !important;
+    left:100%;
+    margin-top:0;
+}
+
+.react-contextmenu-item.react-contextmenu-submenu > .react-contextmenu-item:after {
+    content: "▶";
+    display: inline-block;
+    position: absolute;
+    right: 7px;
+}
+
+.example-multiple-targets::after {
+    content: attr(data-count);
+    display: block;
+}
+
+.react-contextmenu-wrapper{
+    display: inline-block;
+    width:100%;
+}

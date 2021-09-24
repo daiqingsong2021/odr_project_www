@@ -1,0 +1,104 @@
+.main{
+    background: #fff;
+
+    .head{
+        padding: 20px 20px;
+        border-bottom: 1px solid #ccc;
+        h2{
+            margin-bottom: 20px;
+        }
+        p{
+            display: inline-block;
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 0px;
+            width: 100%;
+            .label{
+                display: inline-block;
+                width: 70px;
+                color: #555;
+            }
+        }
+        .time{
+            width: 100%;
+            height: 20px;
+            line-height: 20px;
+            span{
+                float: right;
+                color: #333
+            }
+        }
+    }
+
+    .center{
+        height: 180px;
+        overflow-y: auto;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+    }
+    
+    .download{
+        border-top: 1px solid #ccc;
+        height: 250px;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+        overflow-y: auto;
+
+        .downloadSubitem{
+            margin-bottom: 10px;
+        }
+
+        .show{
+            display: flex;
+            // justify-content: space-between;
+            flex-wrap: wrap;
+            
+
+            .showSubitem{
+                width: 190px;
+                height: 155px; 
+                border: 1px solid #d9d9d9;
+                border-radius: 5px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+                cursor: pointer;
+                .showIcon{
+                    width: 100%;
+                    height: 99px;
+                    border-bottom: 1px solid #d9d9d9;
+                    text-align: center;
+                    line-height: 99px;
+
+                    .icon{
+                        font-size: 45px;
+                    }
+
+                }
+                .showHint{
+                    width: 100%;
+                    height: 54px;
+                    background: #f3f3f3;
+                    box-sizing: border-box;
+                    padding: 5px;
+
+                    p{
+                        margin: 0;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+    }
+    .button{
+        border-top: 1px solid #ccc;
+        padding: 20px;
+        height: 75px;
+        div{
+            float: right;
+            button{
+                margin-right: 10px;
+            }
+        }
+    }
+}

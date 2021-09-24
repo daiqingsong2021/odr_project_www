@@ -1,0 +1,106 @@
+
+.main {
+  :global{
+    .ant-tabs-bar {
+      background-color: #fff
+    }
+  }
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  .topMenu {
+    height: 40px;
+    border-bottom: 1px solid #d2d2d2;
+    display: flex;
+    align-items: center;
+  }
+  .height20 {
+    width: 100%;
+    height: 10px;
+    background-color: #f1f1f1;
+  }
+  .leftBox {
+    background-color: white;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    padding:0 8px 0 0;
+  }
+  .rightBox {
+    background-color: white;
+    min-width: 40;
+    .rightTitle {
+      position: absolute;
+      right: 40px;
+      width: auto;
+      z-index: 9999999;
+      background-color: #0d55a4;
+      white-space: nowrap;
+      color: white;
+      padding: 0 10px;
+    }
+  }
+  .rightContent {
+    background-color: white;
+    bottom: 1px;
+    overflow: scroll;
+    border: 1px solid #d2d2d2;
+    margin-top:50px;
+    :global {
+      .ant-form {
+        margin-top: 20px;
+        .ant-form-item-label {
+          margin-right: 30px;
+          margin-left: 10px;
+        }
+        .ant-form-item-control-wrapper {
+          .ant-form-item-control {
+            margin-left: 12px;
+          }
+        }
+      }
+    }
+  }
+  .border2 {
+    position: absolute;
+    border-top: none;
+    border-bottom: none;
+    height: 100%;
+    top: 50px;
+    cursor: pointer;
+    z-index: 1000;
+    width: 6px;
+    height: 100%;
+    background-color: #a0a0a0;
+  }
+  .border {
+    position: absolute;
+    width: 6px;
+    border: 1px solid #73a4e6;
+    background-color: white;
+    border-top: none;
+    border-bottom: none;
+    cursor: pointer;
+    height: 100%;
+    top: 50px;
+    z-index: 999;
+    .border3 {
+      position: absolute;
+      height: 100px;
+      top: 50%;
+      margin-top: -50px;
+      width: 12px;
+      left: 50%;
+      margin-left: -6px;
+      li {
+        margin-top: 20px;
+      }
+    }
+  }
+  .rightClose {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    cursor: pointer
+  }
+}

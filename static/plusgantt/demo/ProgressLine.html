@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+    <title>普加甘特图</title>
+    <script src="../scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+<script src="../scripts/miniui/miniui.js" type="text/javascript"></script>    
+<script src="../scripts/miniui/locale/zh_CN.js" type="text/javascript"></script>
+
+<link href="../scripts/miniui/themes/default/miniui.css" rel="stylesheet" type="text/css" /><link href="../scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css" />    
+<link href="../scripts/miniui/themes/icons.css" rel="stylesheet" type="text/css" />
+
+<script src="../scripts/plusgantt/GanttMenu.js" type="text/javascript"></script>
+<script src="../scripts/plusgantt/GanttSchedule.js" type="text/javascript"></script>
+<script src="../scripts/plusgantt/GanttService.js" type="text/javascript"></script>
+
+<!--进度线-->
+<link href="js/ProgressLine.css" rel="stylesheet" type="text/css" />
+<script src="js/ProgressLine.js" type="text/javascript"></script>
+
+</head>
+<body style="background:white;font-size:13px;">
+
+   <label><input type="checkbox" onclick="toggleProgressLine(this.checked)"  checked/>显示进度线</label>
+    <select onchange="changeProgressLineMode(this.value)">
+        <option value="1">模式1</option>    
+        <option value="2">模式2</option>    
+    </select>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+/* 创建甘特图对象，设置列配置
+-----------------------------------------------------------------------------*/
+
+    var gantt = new CreateGantt();
+    gantt.render(document.body);
+
+    //进度线
+    var progressLine = new ProgressLine(gantt, {
+        visible: true,
+        getProjectDate: function () {
+            return new Date(2007, 0, 10);
+        },
+        getTaskDate: function (task) {
+            if (task.Start && task.Finish) {
+                var time = task.Finish - task.Start;
+                time = time * task.PercentComplete / 100;
+                var date = new Date(task.Start.getTime() + time);
+                return date;
+            }
+            //return task.Start;
+        }
+    });
+
+    function toggleProgressLine(checked) {
+        progressLine.setVisible(checked);
+    }
+
+    function changeProgressLineMode(mode) {
+        progressLine.setMode(mode);
+    }
+    
+
+/* 业务代码
+-----------------------------------------------------------------------------*/
+
+
+//加载树形数据
+function loadTree() {
+    gantt.loading();
+    $.ajax({
+        url: "data/taskTree.txt",
+        cache: false,
+        success: function (text) {
+            var data = mini.decode(text);
+
+            gantt.loadTasks(data);
+
+            gantt.unmask();
+
+            //折叠全部
+            //gantt.collapseAll();
+        }
+    });
+}
+
+loadTree();
+
+</script>

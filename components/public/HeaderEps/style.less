@@ -1,0 +1,568 @@
+
+  @font-face {
+    font-family: 'iconfont';
+    src: url('/static/fonts/project/iconfont.eot');
+    src: url('/static/fonts/project/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('/static/fonts/project/iconfont.woff') format('woff'),
+    url('/static/fonts/project/iconfont.ttf') format('truetype'),
+    url('/static/fonts/project/iconfont.svg#iconfont') format('svg');
+  }
+  .menuModal{
+    display: flex;
+    display: -ms-flexbox;
+    background-color:  #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    padding:20px;
+    flex-flow:wrap;
+    -ms-flex-flow: wrap;
+    max-width: 890px;
+    .itemstyle{
+      padding-left: 30px;
+      &:nth-of-type(1){
+        padding-left: 22px;
+      }
+      h4{
+        font-weight: 600;
+        height: 30px;
+        margin: 0;
+        line-height: 30px;
+        overflow:hidden;
+	text-overflow:ellipsis; //加省略号
+	white-space:nowrap; //强制不换行
+        .ulicon{
+          display: inline-block;
+          width: 8px;
+          vertical-align: middle;
+          height: 8px;
+          margin-right: 11px;
+          background-color: #d2d2d2
+        }
+      }
+      .listss{
+        margin-left: 16px;
+      }
+     p{
+       margin: 0;
+       padding:0;
+       line-height: 40px;
+       height:40px;
+       font-weight: 600;
+       overflow:hidden;
+      
+       cursor: pointer;
+	text-overflow:ellipsis; //加省略号
+	white-space:nowrap; //强制不换行
+       span{
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        vertical-align: middle;
+        margin-right: 11px;
+        border-radius: 50%;
+        background-color: #1890ff;
+       }
+     }
+    }
+  }
+  .main{
+    @media screen and (max-width: 1366px) { /*当屏幕尺寸小于600px时，应用下面的CSS样式*/
+      :global{
+        .ant-menu-horizontal > .ant-menu-item, .ant-menu-horizontal > .ant-menu-submenu{
+          padding: 0 10px;
+        }
+      }
+    }
+    
+    .userName{
+      max-width: 85px;
+      overflow: hidden;
+      display: inline-block;
+      white-space: nowrap;
+      text-overflow: ellipsis
+    }
+    .iconfont {
+      font-family: "iconfont" !important;
+      font-size: 18px;
+      font-style: normal;
+      -webkit-font-smoothing: antialiased;
+      -webkit-text-stroke-width: 0.2px;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .content {
+      width: 100%;
+
+      align-items: center;
+
+      border-bottom: 8px solid #f5f5f5;
+      a {
+        color:#333;
+      }
+      .head{
+        padding: 0 15px;
+        display: flex;
+        display: -ms-flexbox;
+        -ms-flex-align: center;
+        align-items: center;
+        line-height: 50px;
+        justify-content: space-between;
+        -ms-flex-pack: justify;
+        .headLeft {
+          display: flex;
+          display: -ms-flexbox;
+          align-items: center;
+          -ms-flex-align: center;
+          .security{
+            line-height: 30px;
+            font-size: 10px;
+            border: 1px #e67e91 solid;
+            border-radius: 30px;
+            white-space: nowrap;
+            height: 30px;
+            width: 30px;
+            font-weight: 600;
+            color: #e67e91;
+            text-align: center;
+            margin-left: 10px; 
+          }
+          .systitle{
+
+            padding-left: 10px;
+            p{
+              margin:0;
+              padding-top:15px;
+              padding-bottom: 5px;
+              line-height: normal;
+            }
+            span{
+              line-height: normal;
+            }
+          }
+        }
+        .headLeft input {
+          padding: 2px;
+          text-indent: 5px;
+          width: 230px;
+          outline: none;
+          border: none;
+
+        }
+        .searchSubIcon {
+          background-color: #3c8dff;
+          color: white;
+          font-size: 24px;
+          width: 20px;
+          height: 20px;
+          border-radius: 100%;
+          text-align: center;
+          line-height: 16px;
+        }
+        .menu2style{
+          :global{
+            .ant-menu{
+              background:none
+            }
+            .ant-menu-dark .ant-menu-item {
+              color: white;
+          }
+          }
+          li{
+            font-weight: 600
+          }
+        }
+        .headCenter {
+          cursor: pointer;
+          position: relative;
+          height: 50px;
+          display: flex;
+          display: -ms-flexbox;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          justify-content: center;
+          -ms-flex-pack: center;
+          align-items: center;
+          -ms-flex-align: center;
+          :global{
+            .ant-menu{
+              background:none
+            }
+            .ant-menu-dark .ant-menu-item {
+              color: white;
+          }
+          }
+
+          .showBox div{border: 1px solid #d2d2d2;margin-right: 10px;padding: 2px;}
+        }
+        .sysname{
+          font-weight: 600;
+          line-height: 50px;
+          padding-left: 10px;
+        }
+        .headmiddle{
+          display: flex;
+          align-items: center;
+          width:150px;
+        }
+        .headRight {
+          display: flex;
+          display: -ms-flexbox;
+          align-items: center;
+          -ms-flex-align: center;
+          .mySearch{
+            width: 200px;
+            margin-right: 25px;
+           display: flex;
+           display: -ms-flexbox;
+            input {
+              margin-right: 5px;
+              width: 150px;
+              line-height: 20px;
+              vertical-align: sub;
+              border: none;
+              outline: none;
+              border-bottom: 1px solid #eee;
+              padding-left: 20px;
+          }
+          input::-webkit-input-placeholder {
+              padding-left: 18px;
+          }
+
+
+          }
+          .tipbtn{
+            position: absolute;
+            top: 7px;
+            left: 15px;
+            height: 12px;
+            padding: 0px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 12px;
+            color: white;
+          }
+          a {
+            color: #808080;
+            margin-right: 40px;
+            font-size: 16px;
+          }
+          :global{
+            .ant-badge{
+              margin-right: 24px;
+            }
+            .ant-badge-count{
+              height: 15px;
+              line-height: 15px;
+            }
+            .ant-badge-count{
+              border-radius: 5px;
+            }
+          }
+        }
+
+      }
+   
+      .menuList{
+        text-align: center;
+        margin: 0 auto;
+        font-size: 14px;
+        position: relative;
+        border-top:1px solid #d2d2d2;
+        height:40px;
+        li{
+          font-size: 14px;
+          font-weight: 600;
+        }
+        :global{
+          .ant-menu-horizontal{
+            border-bottom:none;
+           line-height: 40px;
+          }
+        }
+        .menuListleft{
+         position: absolute;
+        top:9px;
+        left:15px;
+        }
+      }
+    }
+
+}
+
+.personalstyle{
+  width: 300px;
+  padding: 15px 0;
+  .menuSelect{
+    width: 250px;
+    margin: 10px auto;
+    display: flex;
+    display: -ms-flexbox;
+    .stymenu{
+      border: 1px #e8e8e8 solid;
+      padding: 2px 10px;
+      border-radius: 4px;
+      margin-right: 30px;
+      cursor: pointer;
+    }
+  }
+ .styletitle{
+  width: 250px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    display: block;
+ }
+  .style1{
+    width: 250px;
+    margin: 15px auto;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+    .stylew{
+      width: 45px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.65);
+      height: 30px;
+      border-radius: 3px;
+      overflow: hidden;
+      .stylehead{
+        height: 6px;
+      }
+      .stylemain{
+        background-color: rgba(189, 182, 182, 0.15);
+        height: 25px;
+        text-align: center;
+      }
+      &:hover{
+        transform: scale(1.1);
+      }
+
+    }
+  }
+  .menuStyle{
+    margin-right:16px;
+    position:relative;
+    img {
+      &:hover{
+        transform: scale(1.1);
+      }
+    }
+    i{
+      position:absolute;
+      top:50%;
+      left:50%
+    }
+  }
+  .color{
+    width: 250px;
+    margin: 15px auto;
+    display: flex;
+    display: -ms-flexbox;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+
+    div{
+      width: 25px;
+      height: 25px;
+      border-radius: 3px;
+      text-align: center;
+      i{
+        color: white
+      }
+    }
+  }
+}
+.sysmenu{
+  width: 295px;
+  display: flex;
+  display: -ms-flexbox;
+  padding: 0 20px 40px;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  .sysmenuitem{
+    cursor: pointer;
+    margin-top: 40px;
+    text-align: center;
+    width: 85px;
+    i{
+      box-shadow: 0 0 8px #ded9d9;
+      padding: 10px;
+      color: #1890ff;
+    }
+    p{
+      margin-top: 8px;
+    margin-bottom: 0;
+    }
+  }
+}
+.DrawerMenu{
+  header{
+    padding-left: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-top: 20px;
+  }
+  .divider{
+    background-color: #e8e8e8;
+    height: 1px;
+    margin:14px 25px;
+  }
+  .sectionStyle{
+    h3{
+      font-size: 14px;
+      font-weight: 700;
+      padding-left: 25px
+    }
+    li{
+      padding-left: 20%;
+    }
+    :global{
+      .ant-menu-vertical{
+        border-right: none;
+      }
+      .ant-menu-vertical .ant-menu-item:not(:last-child){
+        margin-bottom: 4px;
+      }
+    }
+  }
+  .favfile{
+
+    .favtitle{
+      padding: 0 25px;
+      display: flex;
+      display: -ms-flexbox;
+      h3{
+        width: 213px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      button{
+        margin-left: 20px;
+      }
+    }
+    li{
+      padding-left: 20%;
+      i{
+        float: right;
+        margin-top: 10px;
+        color: rgba(0, 0, 0, 0.65);
+      }
+    }
+    :global{
+      .ant-menu-vertical{
+        border-right: none;
+      }
+      .ant-menu-vertical .ant-menu-item:not(:last-child){
+        margin-bottom: 4px;
+      }
+    }
+
+  }
+}
+.message{
+  width: 370px;
+  padding:15px;
+  .messageItem{
+    position: relative;
+    display: flex;
+    display: -ms-flexbox;
+    margin-bottom: 12px;
+    .messageContent{
+      width: 200px;
+    }
+    .toptip{
+      position:absolute;
+      top:2px;
+      right: 2px;
+    }
+  }
+  .messagecontanior{
+    max-height: 450px;
+    overflow: auto;
+  }
+  .messageBottom{
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+.tipContent{
+  width: 500px;
+  padding: 15px;
+  .tipContentItem{
+    margin-bottom: 10PX;
+    p{
+      margin-bottom: 5px;
+    }
+    position: relative;
+    .tipleft{
+      position: absolute;
+      top:2px;
+      right: 2px;
+    }
+  }
+  .tipmessage{
+    max-height: 450px;
+    overflow: auto;
+  }
+  .tipContentBottom{
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+.SearchList{
+  width: 300px;
+    padding: 10px;
+  .modal{
+    position: relative;
+    .more{
+      position: absolute;
+      bottom: 9px;
+      font-size: 14px;
+      right: 10px;
+    }
+  }
+  p{
+    text-align: center;
+    line-height: 14px;
+    padding-top: 10px;
+  }
+  :global{
+    .ant-menu-vertical{
+     border-right:none;
+     border-bottom: 1px solid #e8e8e8;
+
+ }
+ .ant-menu-vertical > .ant-menu-item{
+  height: 30px;
+  line-height: 30px;
+ }
+}
+}
+.searchClass{
+
+  width: 160px;
+  top: 60px;
+  left: -26px;
+  transition: 1s;
+  padding-bottom: 1px;
+  :global{
+     .ant-menu-vertical{
+      border-right:none;
+      border-bottom: 1px solid #e8e8e8;
+  }
+  }
+  li{
+    padding-left: 20px;
+  }
+  p{
+    text-align: center;
+    line-height: 14px;
+    padding-top: 10px;
+  }
+}
+.popoverTxt{
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  -ms-flex-align: center;
+  cursor: pointer;
+}

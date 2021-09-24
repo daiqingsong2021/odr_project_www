@@ -1,0 +1,40 @@
+.main{
+  display:flex;
+  display: -ms-flexbox;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+  height: 100%;
+  .subMain{width:100%;
+    // overflow: auto;
+    :global{
+      .ant-row{padding:20px;border-top: 1px solid #eaeaea;}
+      .ant-statistic-title,.ant-statistic-content{text-align: center}
+    }
+  }
+  .tableMain{display: flex;
+    display: -ms-flexbox;
+    justify-content: space-between;
+    -ms-flex-pack: justify;
+  .table{
+    flex:1;-ms-flex:1;width: 0;overflow: auto;
+  }}
+  .leftMain{overflow: auto;flex:1;-ms-flex:1;width: 0;}
+  :global{
+    .ant-table td { white-space: nowrap; }
+    .ant-table thead{white-space: nowrap}
+    .ant-table td,.ant-table th { white-space: nowrap; }
+  }
+  .clickRowStyl{
+    background-color :#e7f7ff
+  }
+  :global{
+    .ant-table-pagination.ant-pagination{
+      float: left !important;
+      min-width: 440px;
+      margin-top: 30px;
+    }
+    .ant-table-pagination.ant-pagination{
+      margin: 16px 0 16px 20px;
+    }
+  }
+}

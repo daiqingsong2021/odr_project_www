@@ -1,0 +1,31 @@
+
+  .main {
+    table{
+      table-layout : fixed
+    }
+    :global {
+      .ant-modal-footer {
+        border-top: none
+      }
+      .ant-table-body td{
+        white-space: nowrap;    
+        overflow: hidden;       
+        text-overflow: ellipsis;
+      }
+      .ant-table-body{
+        overflow-y: auto !important;
+      }
+      .ant-table-small > .ant-table-content .ant-table-header{
+        overflow-y: auto;
+      }
+    }
+    .box {
+      height: 320px;
+      .tableBox {
+        width: 870px;
+      }      
+    }
+  }
+
+
+

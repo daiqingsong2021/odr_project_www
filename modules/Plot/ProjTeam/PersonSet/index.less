@@ -1,0 +1,49 @@
+@import '../../../../static/less/rightTable.less';
+.main {
+    .content{
+        width:100%;
+        height:100%;
+        min-height:800px;
+    }
+  :global {
+    .ant-table-empty .ant-table-body {
+      overflow-y: hidden !important;
+    }
+  }
+
+  .clickRowStyl {
+    background-color: #e7f7ff
+  }
+
+  .myProgress {
+    position: relative;
+
+    :global {
+      .ant-progress-outer {
+        padding-right: 0;
+        margin-right: 0;
+
+      }
+
+      .ant-progress-success-bg,
+      .ant-progress-bg {
+        height: 15px !important;
+      }
+
+      .ant-progress-inner {
+        border: 1px solid #1890ff;
+      }
+
+      .ant-progress-inner {
+        overflow: hidden;
+      }
+
+      .ant-progress-text {
+        position: absolute;
+        top: 6px;
+        right: 22%;
+        font-weight: 600;
+      }
+    }
+  }
+}

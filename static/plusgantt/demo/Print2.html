@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="lodop/LodopFuncs.js" type="text/javascript"></script>
+    <script src="../scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="../scripts/miniui/miniui.js" type="text/javascript"></script>    
+    <script src="../scripts/miniui/locale/zh_CN.js" type="text/javascript"></script>
+
+    <link href="../scripts/miniui/themes/default/miniui.css" rel="stylesheet" type="text/css" /><link href="../scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css" />    
+    <link href="../scripts/miniui/themes/icons.css" rel="stylesheet" type="text/css" />
+
+    <script src="../scripts/plusgantt/GanttMenu.js" type="text/javascript"></script>
+    <script src="../scripts/plusgantt/GanttSchedule.js" type="text/javascript"></script>
+    <script src="../scripts/plusgantt/GanttService.js" type="text/javascript"></script>
+    <object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0> 
+	<embed id="LODOP_EM" type="application/x-print-lodop" width=0 height=0 pluginspage="install_lodop32.exe"></embed>
+</object> 
+</head>
+<body>
+    <input type="button" onclick="printCurrentGantt()" value="打印当前甘特图" />
+    <input type="button" onclick="printWholeGantt()" value="打印整体甘特图" />
+    <div id="printAll"></div>
+</body>
+</html>
+<script type="text/javascript">
+
+    /* 创建甘特图对象，设置列配置
+    -----------------------------------------------------------------------------*/
+
+    var gantt = new CreateGantt();
+    gantt.render(document.body);
+    
+    //右键菜单
+    var ganttMenu = new GanttMenu();
+    gantt.setContextMenu(ganttMenu);
+
+    /* 业务代码
+    -----------------------------------------------------------------------------*/
+
+    //加载树形数据
+    function loadTree() {
+        gantt.loading();
+        $.ajax({
+            url: "data/taskTree.txt",
+            cache: false,
+            success: function (text) {
+                var data = mini.decode(text);
+
+                gantt.loadTasks(data);
+
+                gantt.unmask();
+
+                //折叠全部
+                //gantt.collapseAll();
+            }
+        });
+    }
+
+    //加载列表数据
+    function loadList() {
+        gantt.loading();
+        $.ajax({
+            url: "data/taskList.txt",
+            cache: false,
+            success: function (text) {
+                var data = mini.decode(text);
+                //列表转树形
+                data = mini.arrayToTree(data, "children", "UID", "ParentTaskUID");
+                gantt.loadTasks(data);
+                gantt.unmask();
+            }
+        });
+    }
+    loadList();     //这个方式，服务端只需要生成列表数据就可以。
+    //loadTree();
+
+    var LODOP; //声明为全局变量
+    var ganttHtml;
+    function printWholeGantt() {
+        gantt.getHtmlCallback(function (html) {
+            ganttHtml = html;
+            CreateOneFormPage();
+            LODOP.SET_PRINT_MODE("PRINT_PAGE_PERCENT", "Full-Page");
+            LODOP.PREVIEW();
+        });
+
+    };
+
+    function CreateOneFormPage() {
+        LODOP = getLodop(document.getElementById('LODOP_OB'), document.getElementById('LODOP_EM'));
+
+        var strStyleCSS = '<link href="../scripts/miniui/themes/default/miniui.css" rel="stylesheet" type="text/css" />'
+                            + '<link href="../scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css" />'
+                            + '<link href="../scripts/miniui/themes/icons.css" rel="stylesheet" type="text/css" />';
+        var strFormHtml = strStyleCSS + ganttHtml;
+        LODOP.SET_PRINT_PAGESIZE(0, 10000, 3000, "A4");  //设定纸张大小(intOrient,intPageWidth,intPageHeight,strPageName)
+        
+        LODOP.ADD_PRINT_HTML(0, 0, 6400, 2050, strFormHtml); //增加超文本项 (intTop,intLeft,intWidth,intHeight,strHtml)
+    };
+
+    function printCurrentGantt() {
+        CreateOneFormPage2();
+        
+        LODOP.PREVIEW();
+    }
+    function CreateOneFormPage2() {
+        LODOP = getLodop(document.getElementById('LODOP_OB'), document.getElementById('LODOP_EM'));
+
+        var strStyleCSS = '<link href="../scripts/miniui/themes/default/miniui.css" rel="stylesheet" type="text/css" />'
+                            + '<link href="../scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css" />'
+                            + '<link href="../scripts/miniui/themes/icons.css" rel="stylesheet" type="text/css" />';
+        var strFormHtml = strStyleCSS + gantt.getEl().innerHTML;
+        LODOP.SET_PRINT_PAGESIZE(0, 3000, 2000, "A4");  //设定纸张大小(intOrient,intPageWidth,intPageHeight,strPageName)
+        LODOP.ADD_PRINT_HTML(0, 0, 1000, 800, strFormHtml); //增加超文本项 (intTop,intLeft,intWidth,intHeight,strHtml)
+    };
+</script>

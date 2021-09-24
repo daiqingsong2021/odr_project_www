@@ -1,0 +1,75 @@
+.main{
+  display:flex;
+  justify-content: space-between;
+  height: 100%;
+  .tablename{
+    min-width: 300px;
+  }
+  .leftMain{width: 100%;overflow: auto}
+  :global{
+    .ant-table td { white-space: nowrap; }
+    .ant-table thead{white-space: nowrap}
+  }
+  :global{
+    .ant-table td,.ant-table th { white-space: nowrap; }
+    .ant-table-small{
+      border: none
+    }
+    tr{
+      border-bottom: 1px #e8e8e8 solid;
+    }
+  }
+  .redLight{
+    height: 18px;
+    width: 18px;
+    background-color: red;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .yellowLight{
+    height: 18px;
+    width: 18px;
+    background-color: yellow;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .whiteLight{
+    height: 18px;
+    width: 18px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #d9d9d9;
+  }
+  .greenLight{
+    height: 18px;
+    width: 18px;
+    background-color: green;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .lesadd{
+    :global{
+      .ant-spin-nested-loading{
+        height: 100%;
+      }
+      .ant-spin-container{
+        height: 100%;
+      }
+      .ant-table-small{
+        height: 100%;
+      }
+      .ant-table-content{
+        height: 100%;
+      }
+      .ant-table-scroll{
+        height: 100%;
+      }
+      .ant-table-body{
+        height: 100%;
+        overflow-x: auto
+      }
+    }
+
+  }
+}

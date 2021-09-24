@@ -1,0 +1,113 @@
+.wrap{background: rgba(0,0,0,0.7);}
+.main {
+  width: 100%;
+  display: flex;
+  display: -ms-flexbox;
+  background-color: #f2f2f2;
+  z-index:99;
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+  .subTags{
+    overflow: auto;
+    position: relative;
+    width: 100%;
+    :global{
+      .ant-tabs.ant-tabs-top.ant-tabs-line{
+        padding:7px 10px;
+      }
+      .ant-tabs-bar.ant-tabs-top-bar{
+        position: inherit !important;
+      }
+    }
+  }
+  .list {
+    width: 40px;
+    text-align: center;
+    background-color: white;
+    height: 100%;
+    margin-right: 4px;
+  }
+
+  .list li {
+    margin-top: 0px;
+    width: 40px;
+    position: relative;
+    cursor: pointer;
+    padding: 7px 0;
+    :global {
+      .ant-tooltip-inner {
+        color: #0d55a4;
+        background-color: white
+      }
+    }
+  }
+
+  .tooltip {
+    background-color: white;
+    font-size: 30px
+  }
+
+  .rightTitle {
+    position: absolute;
+    right: 40px;
+    top: -10px;
+    width: auto;
+    z-index: 1000;
+    background-color: #0d55a4;
+    white-space: nowrap;
+    padding: 10px 15px;
+    color: white
+  }
+
+  .rightClose {
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  .content {
+    // border: 1px solid #f2f2f2;
+    background-color: white;
+    height: 100%;
+    display: flex;
+    display: -ms-flexbox;
+    overflow-x: auto;
+    .border {
+      width: 6px;
+      min-width : 6px;
+      border: 1px solid #d2d2d2;
+      height: 100%;
+      cursor: pointer;
+      border-top: none;
+      border-bottom: none;
+      position: relative;
+
+      .leftIcon {
+        position: absolute;
+        top: 48%;
+        right: 0;
+      }
+
+      .rightIcon {
+        position: absolute;
+        top: 48%;
+        left: 0;
+      }
+    }
+  }
+
+  .rightTags {
+    width: 40px;
+  }
+}
+
+.currentColor {
+  border-right: 2px solid #008dff;
+
+  i {
+    color: #008dff;
+  }
+}

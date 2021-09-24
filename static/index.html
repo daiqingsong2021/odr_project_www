@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit" />
+		<meta name="force-rendering" content="webkit" />
+		<meta httpEquiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+		<meta name='viewport' content='width=device-width, initial-scale=1' />
+		<link href="images/suzhou/icon.png" rel="icon" />
+		<script src="plusgantt/scripts/jquery-1.6.2.min.js" type="text/javascript"  ></script>
+		<script src='plusgantt/demo/js/ProgressLine.js' ></script>
+		<link href='plusgantt/demo/js/ProgressLine.css' rel="stylesheet" type="text/css" />
+		<link href="plusgantt/scripts/miniui/themes/default/miniui.css" rel="stylesheet" type="text/css" />
+		<script src="plusgantt/scripts/miniui/miniui.js" type="text/javascript"></script>    
+		<script src="acmPlusGantt/locale/zh_CN.js" type="text/javascript" ></script>
+		<link href="less/ganttDefault.css" rel="stylesheet" type="text/css" />
+		<script src="plusgantt/scripts/plusgantt/GanttMenu.js" type="text/javascript" ></script>
+		<script src="plusgantt/scripts/plusgantt/GanttSchedule.js" type="text/javascript" ></script>
+		<script src="plusgantt/scripts/plusgantt/GanttService.js" type="text/javascript" ></script>
+		<title>苏州轨道交通工程项目管理系统</title>
+		<script>
+			 //打开chrome浏览器
+			function execChrome(url) {
+				var ws = new ActiveXObject("WScript.Shell");
+				ws.Run("cmd.exe /c start chrome " + url, 0, true);
+			}
+				//打开火狐浏览器
+			function execFireFox(url) {
+				var ws = new ActiveXObject("WScript.Shell");
+				ws.Run("cmd.exe /c start firefox " + url, 0, true);
+			}
+				//关闭IE浏览器
+			function closeWin() {
+				this.window.close();
+			}
+		</script>
+	</head>
+
+	<body id='htmlStr'>
+		<!-- <p>暂时不支持IE9及以下版本，推荐IE10及以上版本或360、谷歌Chrome浏览器。</p>
+		<p>将为您自动打开谷歌Chrome浏览器，请稍候...</p>
+		<hr />
+		<p>如果没有为您自动跳转到谷歌Chrome浏览器，可能原因及处理方式如下：
+			<br>
+			<strong>1、未调整IE安全设置：</strong>
+			<a href="http://iepms.sz-mtr.com:8503/tools/IESetting.exe" target="view_window">点击这里</a>下载并运行IE设置工具，然后刷新此页面；
+			<br>
+			<strong>2、未安装chrome浏览器：</strong>请
+			<a href="https://www.google.cn/chrome/index.html" target="view_window">点击这里</a>，按照提示安装后刷新此页面。
+			<br>
+		</p> -->
+	</body>
+	<script>
+	window.onload = function(){
+		if (checkIE()) { //判断是否是IE浏览器
+			document.getElementById('htmlStr').innerHTML = '<p>暂时不支持IE9及以下版本，推荐IE10及以上版本或360、谷歌Chrome浏览器。</p><p>将为您自动打开谷歌Chrome浏览器，请稍候...</p><hr /><p>如果没有为您自动跳转到谷歌Chrome浏览器，可能原因及处理方式如下：<br><strong>1、未调整IE安全设置：</strong><a href="http://iepms.sz-mtr.com:8503/tools/IESetting.exe" target="view_window">点击这里</a>下载并运行IE设置工具，然后刷新此页面；<br><strong>2、未安装chrome浏览器：</strong>请<a href="https://www.google.cn/chrome/index.html" target="view_window">点击这里</a>，按照提示安装后刷新此页面。<br></p>'
+			open(); //打开chrome或firefox
+		} else {
+			document.getElementById('htmlStr').innerHTML = '<p>正在为您跳转到工程项目管理系统页面，请稍候...</p>'
+			getLoginByUrl();
+		}
+		 //验证是否时IE
+		function checkIE() {
+				var isIE = true;
+				if (navigator && navigator.userAgent) {
+					var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+					isIE = (userAgent.indexOf("compatible") > -1 && (userAgent.indexOf("MSIE 6.0") > -1 || userAgent.indexOf("MSIE 7.0") > -1 || userAgent.indexOf("MSIE 8.0") > -1 || userAgent.indexOf("MSIE 9.0") > -1)); //判断是否IE浏览器
+				}
+				if (isIE) {
+					return true;
+				}
+				return false;
+			}
+			//打开谷歌或火狐浏览器
+		function open() {
+			var url = window.location.protocol + '//'+ window.location.host+'/snlogin'+window.location.search;
+			url = url.toString().replace(/\&/g, '\^\&');
+			var errMessage = execChrome(url); //execFireFox(url);
+			if (errMessage == null) {
+//				setTimeout("closeWin()", 3000);
+			} else {
+				document.write("<h3 style='color:#0000FF'>" + errMessage + "</h3>");
+			}
+		}
+		function getLoginByUrl() {
+			var url = window.location.protocol + '//'+ window.location.host+'/snlogin'+window.location.search;
+//			 window.open(url)
+			window.location.href = url;
+		}
+	}	
+	</script>
+
+</html>

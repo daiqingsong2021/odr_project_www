@@ -1,0 +1,22 @@
+{
+  "presets": [
+      "next/babel",
+      "@babel/preset-env"
+  ],
+  "plugins": [
+      [
+          "@babel/plugin-proposal-decorators",
+          {
+              "decoratorsBeforeExport": true
+          }
+      ],
+      [
+          "import",
+          {
+              "libraryName": "antd",
+              "style": true
+          }
+      ],
+      ["transform-class-properties"]
+  ]
+}

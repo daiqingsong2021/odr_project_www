@@ -1,0 +1,52 @@
+@import "~antd/dist/antd.less";
+a {
+  text-decoration: none !important;
+}
+
+:global {
+  // 全局弹窗按钮
+  .modalbtn {
+    button {
+      width: 120px;
+      margin: 0 10px;
+    }
+
+    :last-child {
+      margin-right: 0;
+    }
+  }
+
+  // 全局按钮
+  .globalBtn {
+    width: 120px !important;
+  }
+
+  // 左侧页面最小宽度
+  .globalMinWidth800{
+    width: calc(100vw - 60px);
+    min-width: 800px;
+  }
+  .td-text-emphasis{
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: text-bottom;
+  }
+  .editable-cell {
+    position: relative;
+  }
+
+  .editable-cell-value-wrap {
+    padding: 5px 1px;
+    cursor: pointer;
+  }
+
+  .editable-row:hover .editable-cell-value-wrap {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 4px 0px;
+  }
+
+}
+

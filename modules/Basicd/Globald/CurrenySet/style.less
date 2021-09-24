@@ -1,0 +1,39 @@
+.main {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+    .leftMain {
+        width: 100%;
+        overflow: auto
+    }
+
+    .clickRowStyl {
+        background-color: #e7f7ff
+    }
+
+    :global {
+
+        .ant-table td,
+        .ant-table th {
+            white-space: nowrap;
+        }
+    }
+
+    .radioT {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #1890ff;
+    }
+
+    .radioF {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+    }
+}

@@ -1,0 +1,57 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+<head>
+    <title>取消验证任务</title>
+    <script src="../scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="../scripts/miniui/miniui.js" type="text/javascript"></script>    
+    <script src="../scripts/miniui/locale/zh_CN.js" type="text/javascript"></script>
+
+    <link href="../scripts/miniui/themes/default/miniui.css" rel="stylesheet" type="text/css" /><link href="../scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css" />
+    <link href="../scripts/miniui/themes/icons.css" rel="stylesheet" type="text/css" />
+
+    <script src="../scripts/plusgantt/GanttMenu.js" type="text/javascript"></script>
+    <script src="../scripts/plusgantt/GanttSchedule.js" type="text/javascript"></script>
+    <script src="../scripts/plusgantt/GanttService.js" type="text/javascript"></script>
+    
+        
+</head>
+<body>
+    取消验证任务
+    <div>                        
+    
+    </div>
+    <br />
+    <div id="viewCt">
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    /* 创建甘特图对象，设置列配置
+    -----------------------------------------------------------------------------*/
+
+    var gantt = new CreateGantt();
+    gantt.render(document.body);
+
+    gantt.enableValidTasks = false;                 //不允许验证任务
+    gantt.autoSyncSummary = false;                  //取消父子任务日期同步
+    gantt.ganttView.showSummary = false;            //父任务显示效果与子任务一样
+
+    gantt.loading();
+    $.ajax({
+        url: "data/taskList.txt",
+        cache: false,
+        success: function (text) {
+            var data = mini.decode(text);
+
+            //列表转树形
+            data = mini.arrayToTree(data, "children", "UID", "ParentTaskUID");
+
+            gantt.loadTasks(data);
+
+            gantt.unmask();
+        }
+    });
+
+    
+
+</script>

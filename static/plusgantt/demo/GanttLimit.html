@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+
+<head>
+    <title>普加甘特图</title>
+    <script src="../scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+<script src="../scripts/miniui/miniui.js" type="text/javascript"></script>    
+<script src="../scripts/miniui/locale/zh_CN.js" type="text/javascript"></script>
+
+<link href="../scripts/miniui/themes/default/miniui.css" rel="stylesheet" type="text/css" /><link href="../scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css" />    
+<link href="../scripts/miniui/themes/icons.css" rel="stylesheet" type="text/css" />
+
+<script src="../scripts/plusgantt/GanttMenu.js" type="text/javascript"></script>
+<script src="../scripts/plusgantt/GanttSchedule.js" type="text/javascript"></script>
+<script src="../scripts/plusgantt/GanttService.js" type="text/javascript"></script>
+<script src="js/GanttLimit.js" type="text/javascript"></script>
+
+</head>
+<body style="background:white;font-size:13px;">
+
+    <h4>限制任务拖拽调制日期范围</h4>
+    <ul>
+        <li>引入js/GanttLimit.js文件，调用GanttLimit(gantt)方法。</li>
+        <li>任务对象需要具备 LimitStart, LimitFinish属性。</li>
+        <li style="font-weight:bold;color:blue;">请拖拽调整“获得项目所需资金”任务的条形图查看效果。</li>
+    </ul>
+
+
+</body>
+</html>
+
+<script type="text/javascript">
+
+/* 创建甘特图对象，设置列配置
+-----------------------------------------------------------------------------*/
+
+    var gantt = new CreateGantt();
+    gantt.render(document.body);
+
+    GanttLimit(gantt);
+
+
+/* 业务代码
+-----------------------------------------------------------------------------*/
+    //加载列表数据
+    function loadList() {
+        gantt.loading();
+        $.ajax({
+            url: "data/taskList.txt",
+            cache: false,
+            success: function (text) {
+                var data = mini.decode(text);
+                //列表转树形
+                data = mini.arrayToTree(data, "children", "UID", "ParentTaskUID");
+                gantt.loadTasks(data);
+                gantt.unmask();
+
+
+
+            }
+        });
+    }
+    loadList();     //这个方式，服务端只需要生成列表数据就可以。
+
+</script>

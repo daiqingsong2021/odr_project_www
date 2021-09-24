@@ -1,0 +1,81 @@
+.main{
+    .ProcessLogModal{
+        :global{
+            .ant-timeline-item-content{
+                margin:0
+            }
+            .ant-timeline-item{
+                padding:0
+            }
+            .ant-timeline{
+                :first-child{
+                    .ant-timeline-item-tail{
+                        height: 150%;
+                        top: -1.25em;
+                    }
+                }
+                
+                .ant-timeline-item-last .ant-timeline-item-tail{
+                    display: block
+                }
+            }
+        }
+        .titleh{
+            padding-bottom: 20px;
+            font-weight: 600;
+        }
+        .nodecontent{
+            position: relative;
+            left: 300px;
+            width: 300px;
+            p{
+                margin-bottom: 5px;
+            }
+            .currentcolr{
+                background-color: #f7f7f8;
+            }
+            .node{
+              
+                    width: 300px;
+                    margin-left: 13px;
+                    margin-bottom: 10px;
+                    
+                    padding: 5px 0 10px 10px;
+                .head{
+                    font-weight: 600;
+                }
+                .maas{
+                    padding-left: 20px;
+                    .a{
+                        p{
+                            display: inline-block;
+                            padding-right: 30px
+                        }
+                    }
+                }
+            }
+            .time{
+                position: absolute;
+                top:0;
+                
+                right: 320px;
+                width: 130px;
+                .s{
+                    color: #1890ff;
+                    text-align: end;
+                }
+            }
+            :global{
+                .ant-timeline-item-head-blue {
+                    width: 8px; 
+                    height:8px; 
+                    border: 4px solid #1890ff;
+                    left: 1px;
+                    top: 2px;
+                   
+                }
+            }
+        }
+    }
+    
+}

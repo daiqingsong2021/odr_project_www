@@ -1,0 +1,60 @@
+.main {
+    
+    .calendarSet {
+        display: flex;
+        display: -ms-flexbox;
+        :global {
+            .ant-table td,
+            .ant-table th {
+                white-space: nowrap;
+            }
+            .ant-collapse {
+                border-radius: 0;
+            }
+            .ant-collapse-content>.ant-collapse-content-box {
+                padding: 0;
+            }
+            .ant-table-small {
+                border: none;
+            }
+        }
+        .listTitle {
+            font-weight: 700;
+            padding: 12px 20px;
+        }
+        .listTitle2 {
+            font-weight: 700;
+            padding: 12px 20px;
+            border-top: 1px solid #d9d9d9;
+            margin-bottom: 0;
+        }
+        .caleft {
+            width: 30%;
+            margin-right: 6px;
+            border-right: 1px solid #d9d9d9;
+            .tablescroll {
+                height: calc(100% - 49px);
+                overflow: auto
+            }
+        }
+        .caright {
+            width: 70%;
+            border: 1px solid #d9d9d9;  
+            height: 100%;
+        }
+    }
+    .radioT {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #1890ff;
+    }
+    .radioF{
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+    }
+}

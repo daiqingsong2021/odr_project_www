@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+
+<head>
+    <title>普加甘特图</title>
+    <script src="../scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+<script src="../scripts/miniui/miniui.js" type="text/javascript"></script>    
+<script src="../scripts/miniui/locale/zh_CN.js" type="text/javascript"></script>
+
+<link href="../scripts/miniui/themes/default/miniui.css" rel="stylesheet" type="text/css" /><link href="../scripts/miniui/themes/blue/skin.css" rel="stylesheet" type="text/css" />    
+<link href="../scripts/miniui/themes/icons.css" rel="stylesheet" type="text/css" />
+
+<script src="../scripts/plusgantt/GanttMenu.js" type="text/javascript"></script>
+<script src="../scripts/plusgantt/GanttSchedule.js" type="text/javascript"></script>
+<script src="../scripts/plusgantt/GanttService.js" type="text/javascript"></script>
+    <style>
+    #information
+    {
+    	color:Red;
+    	font-size:15px;
+    	padding-left:20px;
+    }
+    </style>
+
+</head>
+<body style="background:white;font-size:13px;">
+    <div id="information"></div>
+    <input type="button" value="复制任务" onclick="CopyTasks()"/>
+    <input type="button" value="粘贴任务" onclick="PasteTasks()"/> 
+
+    <span>
+        <input type="radio" name="insertAction" value="before" checked/>节点前
+        <input type="radio" name="insertAction" value="add"/>节点内
+        <input type="radio" name="insertAction" value="after"/>节点后
+    </span>
+</body>
+</html>
+
+<script type="text/javascript">
+
+/* 创建甘特图对象，设置列配置
+-----------------------------------------------------------------------------*/
+
+    var gantt = new CreateGantt();
+    gantt.render(document.body);
+    gantt.setMultiSelect(true);
+    
+
+//右键菜单
+var ganttMenu = new GanttMenu();
+gantt.setContextMenu(ganttMenu);
+
+
+//加载列表数据
+function loadList() {
+    gantt.loading();
+    $.ajax({
+        url: "data/taskList.txt",
+        cache: false,
+        success: function (text) {
+            var data = mini.decode(text);
+            //列表转树形
+            data = mini.arrayToTree(data, "children", "UID", "ParentTaskUID");
+
+            var root = { Name: "项目信息" };
+
+            root.children = data;
+            gantt.loadTasks([root]);
+            gantt.unmask();
+        }
+    });
+}
+loadList(); 
+
+
+/* 业务代码
+-----------------------------------------------------------------------------*/
+
+var _Cache_Tasks;
+function CopyTasks() {
+    _Cache_Tasks = CloneTasks(gantt.getSelecteds());
+    document.getElementById("information").innerHTML = "你已选中" + _Cache_Tasks.length + "条数据!";
+}
+
+function PasteTasks() {
+    var targetTask = gantt.getSelected();
+    var tasks = CloneTasks(_Cache_Tasks);
+    var action = $("[name=insertAction]:checked").val();
+
+    if (targetTask) {
+        gantt.addTasks(tasks, action, targetTask)
+    } else {
+        gantt.addTasks(tasks, action);
+    }
+}
+function CloneTasks(tasks) {
+    tasks = mini.clone(tasks);
+    for (var i = 0, l = tasks.length; i < l; i++) {
+        var task = tasks[i];
+        task.UID = UUID();
+    }
+    return tasks;
+}
+
+
+
+
+
+
+</script>

@@ -1,0 +1,27 @@
+.main{
+    padding: 0 20px;
+    .tabMenu{
+        height: 40px;
+        display: flex;
+        display: -ms-flexbox;
+        align-items: center;
+        -ms-flex-align: center;
+    }
+    .search {
+        padding-top:8px;
+        float: right;
+        padding-right: 22px; 
+        display:flex;
+        display: -ms-flexbox;
+        justify-content: flex-end;
+        -ms-flex-pack: end;
+        line-height: 27px;
+        input{width:160px;} 
+        :global{
+            .ant-input,.ant-select-selection{
+                height:25px;
+            }
+            .ant-select-selection__rendered{line-height: 25px;}
+        } 
+    }
+}

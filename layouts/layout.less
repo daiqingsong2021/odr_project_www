@@ -1,0 +1,57 @@
+.main{
+    display: block;
+}
+.loadingBox{
+  position: fixed;
+  left:0%;
+  top:0%;
+  width: 100%;
+  height: 100%;
+  z-index: 99999999999;
+  text-align: center;
+}
+.loadBg{width:110px;height: 40px;box-shadow: 0 0 8px #d2d2d2;margin: 0 auto;margin-top: 150px;line-height: 40px;border-radius: 4px;background-color: white;padding: 0 5px;}
+.loadingBox img{width: 25px;margin-right: 5px;}
+/*antd全局样式修改*/
+:global {
+
+    // 弹窗body高度
+    .ant-modal-content .ant-modal-body{
+        max-height: 60vh;
+        overflow: auto;
+    }
+
+    // 表格全局修改
+    .ant-table-content > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-content > .ant-table-body > table > .ant-table-thead > tr > th,
+    .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-thead > tr > th,
+    .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-thead > tr > th,
+    .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th,
+    .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-thead > tr > th,
+    .ant-table-content > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr > td,
+    .ant-table-content > .ant-table-scroll > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-content > .ant-table-scroll > .ant-table-body > table > .ant-table-tbody > tr > td,
+    .ant-table-content > .ant-table-fixed-left > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-content > .ant-table-fixed-right > .ant-table-header > table > .ant-table-tbody > tr > td,
+    .ant-table-content > .ant-table-fixed-left > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td,
+    .ant-table-content > .ant-table-fixed-right > .ant-table-body-outer > .ant-table-body-inner > table > .ant-table-tbody > tr > td{
+        padding: 12px;
+    }
+
+    // 模态框body padding
+    .ant-modal-content .ant-modal-body {
+        padding: 15px !important;
+    }
+
+    .ant-popover-inner-content{
+        padding:12px 16px !important;
+    }
+
+    .ant-table.ant-table-empty .ant-table-content .ant-table-body {
+        overflow: inherit !important;
+    }
+
+}

@@ -1,0 +1,72 @@
+.main {
+    width: 100%;
+    margin: 0 5px;
+    overflow: hidden;
+    :global{
+        .ant-table td,.ant-table th { white-space: nowrap; }
+        .ant-table-small{
+          border: none
+        }
+        tr{
+            border-bottom: 1px #e8e8e8 solid;
+          }
+      }
+    .proLeft {
+        float: left;
+        width: calc(70% - 5px);
+        margin-right: 5px;
+        height: 100%;
+        .listTitle{
+            color: #000;
+            font-weight: 700;
+           
+            border-bottom: 1px solid#e8e8e8;
+            p{
+                border-bottom: 1px solid rgb(37, 133, 223);
+                margin: 0;
+                width: 100px;
+                padding: 12px 20px;
+            }
+            .textcolor{
+                border-bottom-color: rgb(0, 255, 34)
+            }
+        }
+
+        .function {
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+    }
+
+    .proRight {
+        float: right;
+        width: 30%;
+        height: 100%;
+        .listTitle{
+            color: #000;
+            font-weight: 700;
+           
+            border-bottom: 1px solid#e8e8e8;
+            p{
+                border-bottom: 1px solid rgb(37, 133, 223);
+                margin: 0;
+                width: 100px;
+                padding: 12px 20px;
+            }
+            .textcolor{
+                border-bottom-color: rgb(0, 255, 34)
+            }
+        }
+
+        .function {
+            margin: 10px 0 13px 0;
+            padding-left: 10px;
+        }
+    }
+    .table{
+        border: 1px solid #ccc;
+        height: calc(100% - 110px);
+        overflow: auto;
+    }
+
+}

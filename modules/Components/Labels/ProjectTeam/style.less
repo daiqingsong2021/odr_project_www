@@ -1,0 +1,59 @@
+.main {
+    :global{
+        .ant-table td,.ant-table th { white-space: nowrap; }
+        .ant-table-small{
+          border: none
+        }
+        tr{
+            border-bottom: 1px #e8e8e8 solid;
+          }
+      }
+    width: 100%;
+      height: 100%;
+    font-size: 14px;
+.table{
+    overflow: auto;
+    height: calc(100% - 132px);
+    border: 1px solid #ccc;
+}
+    .cotent {
+        display: flex;
+        height: 100%;
+        justify-content: space-between;
+        padding:0 20px;
+        .listTitle{
+            color: #000;
+            font-weight: 700;
+           
+            border-bottom: 1px solid#e8e8e8;
+            p{
+                border-bottom: 1px solid rgb(37, 133, 223);
+                margin: 0;
+                width: 100px;
+                padding: 12px 20px;
+            }
+            .textcolor{
+                border-bottom-color: rgb(0, 255, 34)
+            }
+        }
+        .left {
+            height: 100%;
+            width: 40%;
+            float: left;
+        }
+
+        .right {
+            height: 100%;
+            width: 58%;
+        }
+
+        .listIcon {
+            padding: 8px 0;
+            border-bottom: 1px solid#e8e8e8;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+
+}
