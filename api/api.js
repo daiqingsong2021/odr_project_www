@@ -104,7 +104,7 @@ export const projectUserTaskAuthSelectTree = `api/plan/project/user/havetask/aut
 export const dictTypeList = 'api/base/dictType/list'
 export const baseDigitDir = (boCode) => `api/base/dictType/${boCode}/list`
 export const getToken = 'api/auth/jwt/token' //获取token     post
-export const getssoToken = 'api/auth/jwt/ssoToken' //获取token     post
+export const getssoToken = 'api/auth/jwt/ssoToken' //获取dddddtoken     post
 export const getUserInfo = 'api/sys/login/user/info' //登陆获取用户信息   get
 export const addUserInfo = 'api/sys/user/add' //新增用户信息   get
 export const getUserInfoList = (pageSize, currentPageNum) => `api/sys/user/list/${pageSize}/${currentPageNum}` //搜索用户列表
