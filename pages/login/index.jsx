@@ -3,7 +3,7 @@ import style from './index.less'
 import axios from '../../api/axios'
 import router from 'next/router'
 import LoginTpl from "../../components/Login/index";    //登录模块
-import { getToken, getUserInfo } from "../../api/api";     //
+import { getToken, getssoToken, getUserInfo } from "../../api/api";     //
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as sysMenuAction from '../../store/sysMenu/action';
@@ -22,7 +22,7 @@ class Login extends React.Component {
   }
   //回调监听 提交登录接口
   callBackLogin = (data) => {
-    axios.post(getToken, data).then(res1 => {                 //获取token
+    axios.post(getssoToken, data).then(res1 => {                 //获取token
       sessionStorage.clear();
       sessionStorage.setItem('token', res1.data.data)       //token存储到sessionStorage
       this.props.actions.getSysMenu().then(res => {                  //获取用户信息、我的项目、菜单

@@ -2,6 +2,7 @@ import React, {Component} from 'react';   //react引用
 import {message} from 'antd';             //antd组件引用
 import style from './index.less';        //css文件
 import router from 'next/router';         //next路由
+
 //登录模块
 class Login extends Component {
   constructor(props) {
@@ -25,24 +26,37 @@ class Login extends Component {
   }
   //提交登录   发送事件callBackLogin(data)
   loginSubmit = () => {
-    if (this.state.userName == '') {
-      message.error('请输入用户名')
-      return;
-    }
-    if(this.state.passWord ==''){
-      message.error('请输入密码')
-      return;
-    }
     var data={}
-    data.userName = this.state.userName
-    data.password = this.state.password
-    this.props.callBackLogin(data);
+    const { search } = location
+    const paramsString = search.substring(1)
+    const searchParams = new URLSearchParams(paramsString)
+    const name = searchParams.get('name')
+    const userName = searchParams.get('userName')
+    const uid = searchParams.get('uid')
+    const phone_number = searchParams.get('phone_number')
+    if(uid != null && uid != ""){
+      data.userName = userName
+      data.password = 'Njert123!'
+      data.name =  decodeURI(decodeURI(name))
+      data.uid = uid
+      data.phone_number = phone_number
+      this.props.callBackLogin(data);
+    }else{
+      router.push('http://192.168.43.250:12000/ssoLogin')
+    }
+   
   }
+
+  componentDidMount(){
+    this.loginSubmit()
+}
+
   handleEnterKey=(e)=>{
     if(e.keyCode===13){
       this.loginSubmit()
     }
   }
+  
   render() {
     return (
       <div className={style.main} onKeyDown={this.handleEnterKey}>
@@ -53,7 +67,7 @@ class Login extends Component {
           {/*<input placeholder="请输入密码"  name="password" autoComplete="new-password" type="password"  onChange={this.getInputValue.bind(this, 'password')}/>*/}
           <input placeholder="请输入密码" type="password"  onChange={this.getInputValue.bind(this, 'password')}/>
         </div>
-        <div className={style.loginSub} onClick={this.loginSubmit} ><div>登录</div></div>
+        <div className={style.loginSub} onClick={this.loginSubmit} ><div>登录2</div></div>
       </div>
     )
   }

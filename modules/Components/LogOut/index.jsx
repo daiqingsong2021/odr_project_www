@@ -26,7 +26,7 @@ class LogOut extends Component {
     handleSubmit=()=>{
         sessionStorage.setItem('userInfo',null)
         sessionStorage.setItem('token',null) 
-        router.push('/login')
+        router.push('http://192.168.43.250:12000/logout')
     }
     render() {
         const { intl } = this.props.currentLocale
